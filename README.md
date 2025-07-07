@@ -6,7 +6,8 @@
 4. OPEN ON THE CURRENT DIRECTORY
 5. FOR STARTING USE "python app.py"
 6. COPY AND PASTE THE URL ON WEB WHICH WILL BE LIKE THIS "http://"ipv4 ip/url":5050/crun
-7. ELSE IF VPS/MACHINE ALREADY HAVE OWN URL WITH CUSTOM PORT modify the chk.py and paste yr port on the last line WHICH IS EASY TO NOTICE
+7. all connected urls, http:127.0.0.1:5050/crun, using own public ipv4ip should looks like this http:197.128.01.23:5050/crun make sure /crun is added after the port 
+9. ELSE IF VPS/MACHINE ALREADY HAVE OWN URL WITH CUSTOM PORT modify the chk.py and paste yr port on the last line WHICH IS EASY TO NOTICE
 
 # Usage
 
