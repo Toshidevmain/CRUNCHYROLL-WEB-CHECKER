@@ -12,7 +12,7 @@
 
 1. auto saver if stopped checker
 2. can download hits anytime while chking
-3. it have own session id on each runner so u won't lose progress while checking even if browser is closed
+3. it have own session id on each runner so u won't lose progress while checking even if browser is closed and can also copy the url and paste it on other browsers aswell 
 4. fast on high thread and proxy functionality
 5. zero issues 
 
