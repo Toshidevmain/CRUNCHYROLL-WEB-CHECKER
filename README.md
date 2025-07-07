@@ -8,6 +8,15 @@
 6. COPY AND PASTE THE URL ON WEB WHICH WILL BE LIKE THIS "http://"ipv4 ip/url":5050/crun
 7. ELSE IF VPS/MACHINE ALREADY HAVE OWN URL WITH CUSTOM PORT modify the chk.py and paste yr port on the last line WHICH IS EASY TO NOTICE
 
+# Usage
+
+1. auto saver if stopped checker
+2. can download hits anytime while chking
+3. it have own session id on each runner so u won't lose progress while checking even if browser is closed
+4. fast on high thread and proxy functionality
+5. zero issues 
+
+
 # Requirements
 
 LASTEST PYTHON OR ANY VERSION 
