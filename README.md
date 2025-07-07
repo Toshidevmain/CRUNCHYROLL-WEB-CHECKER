@@ -11,3 +11,7 @@
 # Requirements
 
 LASTEST PYTHON OR ANY VERSION 
+
+# Disclaimer 
+
+i'm not responsible for anyone using this tool or projects, its just a optional unknown reasons use on yr will else if not just afford as others 
