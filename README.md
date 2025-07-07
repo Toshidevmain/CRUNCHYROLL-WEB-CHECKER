@@ -12,6 +12,12 @@
 
 LASTEST PYTHON OR ANY VERSION 
 
+# INSTALLATIONS
+
+1. git clone https://github.com/BOTCHATTH/CRUNCHYROLL-WEB-CHECKER.git
+2. cd CRUNCHYROLL-WEB-CHECKER
+3. pip install -r requirements.txt
+
 # Disclaimer 
 
 i'm not responsible for anyone using this tool or projects, its just a optional unknown reasons use on yr will else if not just afford as others 
