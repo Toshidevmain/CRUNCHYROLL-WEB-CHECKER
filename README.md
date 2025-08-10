@@ -9,13 +9,14 @@
 7. all connected urls, http:127.0.0.1:5050/crun, using own public ipv4ip should looks like this http:197.128.01.23:5050/crun make sure /crun is added after the port 
 9. ELSE IF VPS/MACHINE ALREADY HAVE OWN URL WITH CUSTOM PORT modify the app.py and paste yr port on the last line WHICH IS EASY TO NOTICE
 
-#WHAT'S NEW 🆕
+# WHAT'S NEW 🆕
 
 1. now u can simply modify the port through the port.txt file instead of opening whole app.py
 2. now it supports socks4/socks5 and also ipv4/ipv6 proxy
-3. now u can modify the proxy file without while the checker is paused simply by importing new proxy through the input tab and will use that when continue
+3. now u can modify the proxy file/type without while the checker is paused simply by importing new proxy through the input tab and will use that when continue
 4. now u can modify the progress lines from the input box either while paused or while stopped
-5. more optimization and more sync and bugs on too many retries has been fixed and lets skipped compare to the old version
+5. now it support upto 400 THREAD, but 0-150 is the best, now it support upto 400 THREAD, but 0-150 is the best and. And can also modify the thread while paused
+6. more optimization and more sync and bugs on too many retries has been fixed and lets skipped compare to the old version
 
 # Usage
 
