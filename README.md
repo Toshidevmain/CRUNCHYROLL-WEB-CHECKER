@@ -16,7 +16,7 @@
 3. now u can modify the proxy file/type without while the checker is paused simply by importing new proxy through the input tab and will use that when continue
 4. now u can modify the progress lines from the input box either while paused or while stopped
 5. now it support upto 400 THREAD, but 0-150 is the best, now it support upto 400 THREAD, but 0-150 is the best and. And can also modify the thread while paused
-6. more optimization and more sync and bugs on too many retries has been fixed and lets skipped compare to the old version
+6. more optimization and more sync and bugs on too many retries has been fixed and less skipped compare to the old version
 
 # Usage
 
