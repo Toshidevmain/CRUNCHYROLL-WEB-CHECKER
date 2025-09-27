@@ -18,6 +18,10 @@
 5. now it support upto 400 THREAD, but 0-150 is the best, now it support upto 400 THREAD, but 0-150 is the best and. And can also modify the thread while paused
 6. more optimization and more sync and bugs on too many retries has been fixed and less skipped compare to the old version
 
+# UPDATE
+
+- ON API AND HEADER
+
 # Usage
 
 1. auto saver if stopped checker
