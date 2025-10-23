@@ -28,7 +28,21 @@
 2. can download hits anytime while chking
 3. it have own session id on each runner so u won't lose progress while checking even if browser is closed and can also copy the url and paste it on other browsers aswell 
 4. fast on high thread and proxy functionality
-5. zero issues 
+5. zero issues
+
+# SCREENSHOT
+
+<img width="1902" height="865" alt="image" src="https://github.com/user-attachments/assets/55415497-339b-4e31-9f8b-b1c6ac446b3c" />
+
+
+<img width="1914" height="317" alt="image" src="https://github.com/user-attachments/assets/1bfca29e-5e67-4f62-a9ae-2819aa8e7e43" />
+
+
+<img width="1902" height="868" alt="image" src="https://github.com/user-attachments/assets/d045ce9d-3620-4f6c-9da8-af4379583bb4" />
+
+
+
+
 
 
 # Requirements
