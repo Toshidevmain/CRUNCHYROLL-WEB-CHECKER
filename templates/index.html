@@ -1,0 +1,191 @@
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>CR CHECKER - 3D Web Interface</title>
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+		</head>
+		<body>
+
+			<div class="background-animation">
+				<div class="floating-shapes">
+					<div class="shape shape-1"></div>
+					<div class="shape shape-2"></div>
+					<div class="shape shape-3"></div>
+					<div class="shape shape-4"></div>
+					<div class="shape shape-5"></div>
+					<div class="shape shape-6"></div>
+				</div>
+			</div>
+
+
+			<div class="main-container">
+				<div class="header-section">
+					<h1 class="main-title">
+						<span class="title-cr">CR CHECKER</span>
+						<span class="title-3d">3D WEB INTERFACE</span>
+					</h1>
+				</div>
+
+				<div class="stats-panel">
+					<div class="stats-header">
+						<h2 class="stats-title"><u>|I{•𝘾𝙍 𝑪𝑯𝑬𝑪𝑲𝑬𝑹•}I|</u></h2>
+					</div>
+					
+					<div class="stats-container">
+						<div class="stats-grid">
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗦𝗧𝗔𝗧𝗨𝗦:</strong></u></span>
+								<span class="stat-value" id="status">❌ STOPPED</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗧𝗢𝗧𝗔𝗟 𝗖𝗢𝗠𝗕𝗢 𝗟𝗜𝗡𝗘𝗦:</strong></u></span>
+								<span class="stat-value" id="total-lines">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗖𝗛𝗘𝗖𝗞𝗘𝗗:</strong></u></span>
+								<span class="stat-value" id="checked">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗜𝗡𝗩𝗔𝗟𝗜𝗗:</strong></u></span>
+								<span class="stat-value" id="invalid">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗛𝗜𝗧𝗦:</strong></u></span>
+								<span class="stat-value" id="hits">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗖𝗨𝗦𝗧𝗢𝗠:</strong></u></span>
+								<span class="stat-value" id="custom">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗧𝗢𝗧𝗔𝗟 𝗠𝗘𝗚𝗔 𝗙𝗔𝗡:</strong></u></span>
+								<span class="stat-value" id="total-mega-fan">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗧𝗢𝗧𝗔𝗟 𝗙𝗔𝗡 𝗠𝗘𝗠𝗕𝗘𝗥:</strong></u></span>
+								<span class="stat-value" id="total-fan-member">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗧𝗢𝗧𝗔𝗟 𝗨𝗟𝗧𝗜𝗠𝗔𝗧𝗘 𝗠𝗘𝗚𝗔:</strong></u></span>
+								<span class="stat-value" id="total-ultimate-mega">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗘𝗥𝗥𝗢𝗥𝗦:</strong></u></span>
+								<span class="stat-value" id="errors">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗥𝗘𝗧𝗥𝗜𝗘𝗦:</strong></u></span>
+								<span class="stat-value" id="retries">0</span>
+							</div>
+							
+							<div class="stat-item">
+								<span class="stat-label"><u><strong>𝗖𝗣𝗠:</strong></u></span>
+								<span class="stat-value" id="cpm">0</span>
+							</div>
+							
+							<div class="stat-item full-width">
+								<span class="stat-label"><u><strong>𝗘𝗟𝗔𝗣𝗦𝗘𝗗 𝗧𝗜𝗠𝗘:</strong></u></span>
+								<span class="stat-value" id="elapsed-time">0:00:00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Control Panel -->
+				<div class="control-panel">
+					<h3 class="panel-title">Control Panel</h3>
+					<div class="control-buttons">
+						<button id="start-button" class="btn-3d btn-start">
+							<i class="fas fa-play"></i> START
+						</button>
+						<button id="stop-button" class="btn-3d btn-stop">
+							<i class="fas fa-stop"></i> STOP
+						</button>
+						<button id="pause-button" class="btn-3d btn-pause">
+							<i class="fas fa-pause"></i> PAUSE
+						</button>
+						<button id="continue-button" class="btn-3d btn-continue">
+							<i class="fas fa-play"></i> CONTINUE
+						</button>
+						<button id="download-hits-button" class="btn-3d btn-download">
+							<i class="fas fa-download"></i> DOWNLOAD HITS
+						</button>
+					</div>
+				</div>
+
+				<div class="upload-section">
+					<h3 class="panel-title">SETTINGS</h3>
+					
+					<div class="threads-section">
+						<label for="threads-input" class="threads-label">
+							<u><strong>THREADS (1-400):</strong></u>
+						</label>
+						<input type="number" id="threads-input" class="threads-input" min="1" max="400" value="10">
+					</div>
+
+					<div class="progress-line-section">
+						<label for="progress-line-input" class="progress-line-label">
+							<u><strong>START:</strong></u>
+						</label>
+						<input type="number" id="progress-line-input" class="progress-line-input" min="0" value="0">
+						<button id="set-progress-button" class="btn-3d btn-set-progress">
+							<i class="fas fa-sync-alt"></i> SET
+						</button>
+					</div>
+
+					<div class="proxy-type-section">
+						<label for="proxy-type-select" class="proxy-type-label">
+							<u><strong>PROXY TYPE:</strong></u>
+						</label>
+						<select id="proxy-type-select" class="proxy-type-select">
+							<option value="http">HTTP</option>
+							<option value="socks4">SOCKS4</option>
+							<option value="socks5">SOCKS5</option>
+						</select>
+					</div>
+					
+					<div class="upload-areas">
+						<div class="upload-area">
+							<h4><u><strong>COMBO FILE</strong></u></h4>
+							<textarea id="combo-input" class="upload-textarea" placeholder="Paste your combo file content here (email:password format)..."></textarea>
+							<button id="upload-combo-button" class="btn-3d btn-upload">
+								<i class="fas fa-upload"></i> IMPORT COMBO
+							</button>
+						</div>
+						
+						<div class="upload-area">
+							<h4><u><strong>PROXY FILE</strong></u></h4>
+							<textarea id="proxy-input" class="upload-textarea" placeholder="Paste your proxy file content here..."></textarea>
+							<button id="upload-proxy-button" class="btn-3d btn-upload">
+								<i class="fas fa-upload"></i> IMPORT PROXY
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div id="status-messages" class="status-messages"></div>
+			</div>
+
+
+            <div class="copyright-section">
+                MADE BY @BOTCHATTH WITH ❤️
+            </div>
+
+			<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+		</body>
+		</html>
+
