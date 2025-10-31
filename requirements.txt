@@ -1,8 +1,8 @@
-Flask==2.3.3
-Flask-SocketIO==5.3.0
-python-engineio==4.5.0
-python-socketio==5.10.0
+Flask==3.0.0
+Flask-SocketIO==5.3.6
+python-engineio==4.9.0
+python-socketio==5.10.1
 requests==2.31.0
-Werkzeug==2.3.7
-socks
+Werkzeug==3.0.1
+PySocks==1.7.1
 colorama==0.4.6
